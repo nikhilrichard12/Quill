@@ -1,0 +1,14 @@
+# Generated pipeline output (drafts, outlines, factchecks, grades) — not tracked.
+output/*
+!output/.gitkeep
+
+# OS / editor cruft
+.DS_Store
+*.swp
+*~
+
+# Environment / secrets — never commit
+.env
+.env.*
+*.local
+.claude/settings.local.json
