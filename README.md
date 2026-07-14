@@ -6,7 +6,7 @@ Quill is a multi-stage content pipeline for generating Littlebird SEO/AEO landin
 
 ## Prerequisites
 - [Claude Code](https://claude.com/claude-code) installed and working.
-- That's it. No Node, no build step, no API keys — the pipeline is prompts + Markdown.
+- That's it. No Node, no build step, no API keys: the pipeline is prompts + Markdown.
 
 ## Repository layout
 ```
