@@ -1,7 +1,20 @@
-The Littlebird Bible (v3)
+The Littlebird Bible (v3.1)
 Single source of truth for the SEO and AEO content pipeline. Writer subagents draft pages from this. The editor subagent enforces voice and rejects hallucinations using this. A human approves from a queue. Treat every fact here as the only authoritative version. If a claim is not in this bible, it cannot go on a page.
 
-Status: v3, built June 23, 2026, from Bible v2 plus the ingested source library (Content Style Guide, Brand Guidelines, Positioning and Messaging, Marketing Personas, Day-in-the-life Use Cases, Stats and Metrics, Launch Tiers, Competitive Tracker, the six live comparison pages, Customer Quotes, Discord). Founder and Viktor confirmations noted inline. Open items are marked TODO or NEEDS-VERIFICATION.
+Status: v3.1, updated July 27, 2026 (docs-site reconciliation) from v3 (built June 23, 2026, from Bible v2 plus the ingested source library: Content Style Guide, Brand Guidelines, Positioning and Messaging, Marketing Personas, Day-in-the-life Use Cases, Stats and Metrics, Launch Tiers, Competitive Tracker, the six live comparison pages, Customer Quotes, Discord). Founder and Viktor confirmations noted inline. Open items are marked TODO or NEEDS-VERIFICATION.
+
+Provenance tiers. PRODUCT-VERIFIED (first-hand app-tested by product) > DOCS-VERIFIED (confirmed on Littlebird's official support documentation, support.littlebird.ai/docs, blessed by Shahzad -- a second-party published source, stronger than telemetry, not first-hand product-tested) > TELEMETRY-VERIFIED (usage telemetry, Tier 2) > NEEDS-VERIFICATION (do not publish). A DOCS-VERIFIED fact is publishable unless a Hard Don't (section 15) says otherwise.
+
+CHANGELOG
+v3.1 -- 2026-07-27 -- docs-site reconciliation. Source: support.littlebird.ai/docs (44 pages snapshotted to reference/docs-site-snapshot/, fetched 2026-07-27; diff report at output/docs-bible-diff-2026-07-27.md). Items below are DOCS-VERIFIED (support.littlebird.ai, 2026-07-27) unless noted.
+- B1 (four features): kept the four canonical marketing pillars; added section 6.6 SUPPORTING SURFACES (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation); reworded the section 6 header and the section 15 "fifth feature" Hard Don't accordingly.
+- B2 (capture mechanism, 4.4/15): adopted the docs-backed phrasings (not a screen recorder, no video or screenshots, not a keylogger, ignores password fields, password-manager auto-exclusion, credit-card/API-key auto-redaction). KEPT GATED as before: "not pixels," "never sees incognito or private windows," "if you can't see it, Littlebird can't either."
+- B3 (languages): docs say Meeting Notes supports "25+ languages"; the live pricing page still says "10+." Inconsistent -- KEPT the Bible's "10+" and FLAGGED (6.2, Appendix A). Do not publish 25+ until the pricing page confirms it.
+- B4 ("Power" tier): a "Power" tier appears on the docs MCP page but not in section 5. NOT added anywhere; logged as an open product question (5.1, Appendix A). Do not publish "Power" as a tier.
+- B5 (privacy wording): adopted "GDPR-aligned / CCPA-aligned" and HIPAA-conditional-on-BAA (10.4); confirmed no-train covers LLM providers (10.5, upgrading 10.9). NOTE: live-site spoke Privacy sections still say "compliant" and now diverge from the Bible -- a copy pass is needed.
+- B6 (Windows): dropped the "(beta)" qualifier from Windows (4.5, 11).
+- Bucket C upgrades: Meeting Prep resolved as a Meeting Notes capability and Quick Access resolved as Hummingbird's invocation (6.5); no-train-incl-providers (10.5/10.9); most 4.4 capture claims (above); Outlook mechanics promoted to a documented integration (new 9.12, DOCS-VERIFIED) plus Microsoft 365 admin setup (9.13); Outlook added to the Phase-1 allow-list (section 9) and the section 1 / section 15 gates.
+- Bucket A additions folded in: context-awareness mechanics + exclusions/auto-privacy (4.4, 4.8, 10.6); platforms/mobile clarification (4.5); billing/usage/account mechanics (5.1); Chat mechanics + Chat Library + image generation (6.1); Meeting Notes structure + Meeting Prep + auto-start + import + iOS transcription (6.2); Routines templates + notifications + web-sourced + auto-pause (6.3); supporting surfaces (6.6); Slack status (9.10); Outlook + Microsoft 365 (9.12, 9.13).
 
 
 1. How to use this bible (read first, subagents)
@@ -12,7 +25,7 @@ Composed claims. A claim that combines two VERIFIED capabilities (for example, r
 Never invent. No invented features, integrations, mechanics, stats, prices, quotes, or customer names. A gap is not an invitation to fill it.
 Defer to a human (route to the approval queue with a flag, do not publish) when:
 a claim depends on an item marked TODO or NEEDS-VERIFICATION,
-you are tempted to state how an integration works beyond Gmail, Google Calendar, or Notion,
+you are tempted to state how an integration works beyond the documented set (Gmail, Google Calendar, Notion, Outlook; see section 9),
 you would describe the capture mechanism in absolute terms (see 4.4 and 15),
 a price, legal, or security specific is involved and is not verbatim from sections 5 or 10.
 Punctuation: ASCII only. No em dashes, no en dashes, no smart quotes. Use periods, commas, parentheses, or the word "to" for ranges. Regular hyphens only inside genuine compound words (for example "bot-free").
@@ -66,6 +79,8 @@ June 23, 2026
 
 
 TODO: assign a single owner per row and a monthly re-check date. Competitor and stat rows decay fastest.
+
+Added 2026-07-27: support.littlebird.ai/docs is now a recognized authoritative source for sections 4, 6, 9, and 10 under the DOCS-VERIFIED tier (see the changelog at the top). Snapshots of all 44 docs pages live at reference/docs-site-snapshot/ (fetched 2026-07-27).
 
 
 3. Brand voice and tone
@@ -132,16 +147,24 @@ Punctuation: ASCII only, no em or en dashes in pipeline output (see section 1).
 
 4.3 How it works. Littlebird runs on your computer and pays attention to the active window you are working in. During meetings it listens along to transcribe and summarize, and no bot joins the call. It can optionally connect to apps for deeper context and to take actions. It works immediately, with zero setup, and gets more useful over time.
 
-4.4 Capture mechanism (GATED, D2). Approved phrasing, writers may use this or weaker: "Littlebird reads the text and elements of your active window via macOS accessibility permissions." Also approved: "screenreading," "reads the text on your screen," "pays attention to the active window."
+4.4 Capture mechanism (D2). Approved phrasing, writers may use this or weaker: "Littlebird reads the text and elements of your active window via macOS accessibility permissions." Also approved: "screenreading," "reads the text on your screen," "pays attention to the active window." Mechanic (DOCS-VERIFIED): capture runs every few seconds on the active window and builds a private, encrypted index of recent activity.
 
-NOT YET APPROVED, do not publish (PENDING ENG SIGN-OFF): "never takes screenshots," "not pixels," "not a screen recorder," "never sees your passwords," "never sees incognito or private windows," "if you can't see it, Littlebird can't either." These appear in internal marketing docs and a customer quote ("snapshots") but are not eng-confirmed and are not on the live site. See section 15.
-TODO (eng, Alex or Tushar): confirm whether there is any visual or pixel capture, and whether the passwords and incognito exclusions can be stated. When signed off, move approved items here and update section 15.
+NOW APPROVED (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27 -- the support Context-awareness/Privacy/Exclusions pages state these publicly): "Littlebird is not a screen recorder" / "does not record video of your screen" / "does not take screenshots"; "not a keylogger" / "does not log your keystrokes"; "designed to ignore password fields"; "password managers (1Password, Bitwarden, LastPass, and similar) are auto-detected and excluded by default"; "credit-card numbers and API keys are auto-redacted before storage." Caveat on passwords (do not overclaim): the docs say Littlebird is DESIGNED to ignore password fields, not that it never sees any secret -- the FAQ notes plain text visible elsewhere on screen may still enter context. So write "designed to ignore password fields" / "auto-excludes password managers," never an absolute "never sees your passwords."
 
-4.5 Platforms. Mac and Windows (Windows in beta). Companion apps on iOS and Android for asking questions away from your desk. The core product is desktop.
+STILL GATED, do not publish: "not pixels" (write "no video or screenshots" instead), "never sees incognito or private windows," "if you can't see it, Littlebird can't either." The docs do not make these specific claims. See section 15.
+TODO (eng, Alex or Tushar): confirm the remaining gated absolutes (pixel-level capture, incognito/private-window exclusion). When signed off, move them to APPROVED and update section 15.
+
+4.5 Platforms. Mac and Windows. (The "Windows beta" qualifier was dropped 2026-07-27, DOCS-VERIFIED: the support site lists Mac and Windows with no beta label and gives full Windows instructions.) Companion apps on iOS and Android for asking questions away from your desk; the mobile apps give access to the context collected on your desktop and do not capture activity from your phone screen (DOCS-VERIFIED). The core product is desktop.
 
 4.6 Controls. The app requires user-granted macOS accessibility permissions on Mac. You decide if it runs at startup. You can pause context collection, exclude apps, and delete your data at any time. Nothing is collected without your permission.
 
 4.7 Company facts (citable). Littlebird raised an $11M seed round (March 2026). Littlebird launched on Product Hunt (March 2026). Co-founder: Alex. Lead engineer: Tushar.
+
+4.8 Context Awareness controls and exclusions (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27). Context Awareness is the named capability that reads the active window; you decide when it runs and what stays out of view.
+Controls: a status button (bottom-left of the app; green = active, gray = paused), a Mac menu-bar icon, and a Windows system-tray icon. Pause for 5, 15, 30, or 60 minutes, or until next launch; resume anytime.
+Exclusions: exclude specific apps, specific website domains, or whole content categories (Banking, Social Media, Shopping, Entertainment, Health). Adult content is always excluded by default.
+Automatic protections: password managers (1Password, Bitwarden, LastPass, and similar) are auto-detected and excluded by default; credit-card numbers and API keys are auto-redacted before storage; password fields are always ignored (see 4.4, 10.6).
+Tip: enabling Google Docs screen-reader support (Cmd+Option+Z) improves what Littlebird can read from a doc.
 
 
 5. Pricing (one canonical block, R3)
@@ -156,9 +179,11 @@ Student: $15 per month for actively enrolled students. First two months free. Ap
 
 Writer rules. Pro is always "from $100 per month," never a flat $100. For Plus, show both the annual ($17) and monthly ($20) figures, or use the annual rate with the "billed annually" qualifier. There is no mid-tier between Plus and Pro; do not imply one exists even though users have requested it.
 
+5.1 Billing, usage, and account mechanics (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27). Billing runs through the Stripe billing portal (Settings > Subscription > Manage Subscription): update payment method, billing address, cardholder name, and VAT/Tax ID; cancel (access continues to the end of the current period) and reactivate anytime. The invoice-recipient email is set separately in Settings > General. Usage: each plan includes a monthly usage pool shown as a single usage bar (Settings > Usage) with a reset date; usage packs can be purchased anytime, never expire, and do not require upgrading to a higher tier. Account email can be changed in Settings > General (one-time-password flow). Open product question (B4): the docs MCP page references a "Power" tier that is not in the section 5 block above -- do NOT publish "Power" as a tier until Viktor confirms the tier map (see Appendix A).
 
-6. The four features
-Exactly four canonical features. Do not invent a fifth (D3).
+
+6. Features (four canonical marketing pillars)
+Four canonical marketing pillars: Chat, Meeting Notes, Routines, Hummingbird. Do not promote a supporting surface to a fifth pillar (D3). Littlebird also ships additional product surfaces (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation) -- these are real and DOCS-VERIFIED, documented in section 6.6 as SUPPORTING SURFACES, not marketing pillars. Reference them factually where useful; never headline a spoke or hero as if one were a fifth pillar.
 
 6.1 Chat.
 
@@ -166,13 +191,16 @@ What it is: your AI with the full picture.
 What it does: ask questions and create content without catching it up, because it already knows your work.
 Approved one-liner: "Chat with everything you have seen."
 Do not claim: that it beats ChatGPT or Claude at general reasoning or writing (see 12, 15).
+Chat mechanics (DOCS-VERIFIED, 2026-07-27): attach a document or image to a chat; dictate a request with the microphone; turn on Max mode for more thorough multi-step reasoning (available tools depend on plan, connected integrations, and permissions); share a chat as Private, Team members, or Public (the share is a snapshot up to the moment you create or update it); star, search, filter, archive (archived chats stay searchable and referenceable), or delete (deleting is permanent -- purged from Littlebird's memory) chats. The Chat Library offers ready-made starting prompts. Image generation runs inside Chat (create/draw an image from a text prompt; a Plus capability, see section 5).
 
 6.2 Meeting Notes.
 
 What it is: notes that write themselves.
 What it does: transcribes and summarizes your meetings so you stay present. No bot joins the call. Works for any audio or video playing on your computer, not only live calls.
 Approved one-liner: "Focus on the conversation. The notes take care of themselves."
-Do not claim: accurate speaker attribution or speaker diarization (users report this is imperfect; NEEDS-VERIFICATION on current state).
+Do not claim: accurate speaker attribution or speaker diarization (users report this is imperfect; NEEDS-VERIFICATION on current state -- the docs do NOT resolve this).
+Meeting Notes mechanics (DOCS-VERIFIED, 2026-07-27): every note produces an editable, shareable structured summary -- Executive summary, "For you" (your personalized action items), Topics discussed, Decisions, Action items (split You vs Others), and Risks/open questions -- alongside the full transcript and your own notes tab. Capture two ways: an automatic pre-meeting prompt (Join Meeting) or manual (+ New Note). Auto-start transcription can be enabled for supported meeting apps (Settings > Meetings), with calendar filtering to choose which calendars are monitored. A Meeting Prep button on future event cards produces a pre-meeting briefing from your context (see 6.5). After a meeting you can chat directly from the summary. iOS supports in-person transcription via the device mic (no system audio, so online meetings stay desktop-only). Existing transcripts/summaries from other apps can be imported (Settings > Import) and become searchable Meeting Notes.
+Number to reconcile (B3, flagged 2026-07-27): the support FAQ says Meeting Notes supports "25+ languages"; the live pricing page still says "10+ languages" (Basic). Kept at 10+ pending reconciliation -- do NOT publish 25+ until the pricing page confirms it.
 
 6.3 Routines.
 
@@ -180,6 +208,7 @@ What it is: insights from your real work.
 What it does: delivers proactive, personalized updates on your schedule, for example a morning briefing or a weekly project recap. Auto-pause is a real setting.
 Example use case: Littlebird can function as a daily journal through a Routine. "Daily journal" is an example use of Routines, not a separate feature (D3).
 Approved one-liner: "Proactive insights, on your schedule."
+Routines mechanics (DOCS-VERIFIED, 2026-07-27): a Routine is a saved prompt that runs on a schedule (daily, weekly, or monthly at a chosen time) and pushes the result back to you. Ready-made Daily/Weekly/Monthly templates exist. Routines can draw from your own work or from the web (e.g. a custom news feed). Auto-pause is on by default (a Routine pauses if you stop opening its output; resume anytime from the Routines dashboard). Configure push and email notifications when an output is ready. You can ask about Routines in Chat ("what did my morning briefing say today").
 
 6.4 Hummingbird.
 
@@ -188,10 +217,19 @@ What it does: open Littlebird over whatever you are doing (double-tap Option), a
 Platform note: currently Mac-only.
 Approved one-liner: "Get answers without breaking your flow."
 
-6.5 Candidate features, pending product confirmation (do not promote to canonical, do not publish as features).
+6.5 Resolved candidate features (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27).
 
-Meeting Prep ("Prep for meeting"): appears as a named action across use-case material, likely under Meeting Notes. NEEDS-VERIFICATION (product): is it a named feature or a capability of Meeting Notes?
-Quick Access: appears on the Cluely comparison page for the double-tap-Option behavior that this bible attributes to Hummingbird. NEEDS-VERIFICATION (product): is Quick Access the same surface as Hummingbird, or distinct? Until resolved, writers use "Hummingbird" and do not use "Quick Access."
+Meeting Prep: RESOLVED -- a capability of Meeting Notes, not a separate feature. It surfaces as a "Meeting Prep" button on a future event's card and produces a pre-meeting briefing from your context. Write it as a Meeting Notes capability (see 6.2); do not promote it to a fifth pillar.
+Quick Access: RESOLVED -- "Quick Access" is the name of Hummingbird's on-demand invocation (double-tap Option), the same surface as Hummingbird, not a distinct feature (the docs call it "Hummingbird Quick Access"). Keep "Hummingbird" as the feature name; "Quick Access" may be used to describe the invocation.
+
+6.6 Supporting surfaces (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27). Real product surfaces, NOT marketing pillars (D3). Reference them factually; never headline a spoke or hero as if one were a fifth feature.
+- Glance: a collapsible panel on the home (new-chat) page (Cmd+G / Ctrl+G) that surfaces your day before you type -- widgets for Schedule, Routines, Yesterday's meetings, Continue (your last chat), and Connect more. Reorderable; remembered across sessions.
+- Projects: folders that group related chats and meetings, with a per-project Instructions field (standing guidance), per-project file uploads shared to every chat in the project, and a context-scope setting (a project can't see outside conversations by default; toggleable).
+- Assistant Notes and Custom Instructions: user-editable persistent memory. Custom Instructions (Settings > Chat) are standing rules only you can edit. Assistant Notes are editable from chat -- Littlebird can add, update, or remove them on request; they persist across inactivity.
+- Command Bar: a Cmd+K / Ctrl+K palette to jump between chats, meeting notes, and settings, with contextual actions (e.g. download a chat as markdown, copy a chat link) and Reset Local Database (a hard refresh from the cloud).
+- MCP server: connect an external AI client (Claude Code/Desktop, Cursor, ChatGPT, and others) to Littlebird tools via OAuth at mcp.littlebird.ai/mcp, scoped to your account permissions. (A Slack MCP server is also offered today; see 9.10.) Availability is plan-gated -- state it as "available on paid plans" and do NOT name the specific tier until the "Power" tier question is resolved (see 5.1 and Appendix A, B4).
+- Image generation: create an image from a text prompt inside Chat (a Plus capability; also noted in 6.1).
+- Also available (no dedicated page treatment needed): an in-app Learn course / guided tour.
 
 
 7. Positioning and messaging
@@ -239,7 +277,7 @@ Five personas (use for pain language in briefs).
 9. Integrations (Phase 1 priority)
 Littlebird supports hundreds of integrations. They are optional. Littlebird works automatically by paying attention to your screen; connecting an app gives deeper access and lets Littlebird take actions. Users browse the full list in Settings > Integrations.
 
-Phase 1 build rule. Build integration pages only for the three fully documented integrations below, and only after eng signs off on their read plus write behavior. Do not build pages for any integration whose mechanics are still NEEDS-VERIFICATION. Do not invent mechanics for any integration (V3).
+Phase 1 build rule. Build integration pages only for the fully documented integrations -- Gmail (9.1), Google Calendar (9.2), Notion (9.3), and Outlook (9.12) -- plus the product-verified Todoist (9.4) and TickTick (9.11). Outlook was added 2026-07-27 as DOCS-VERIFIED (mechanics documented on the support site; treat one tier below product-verified). Do not build pages for any integration whose mechanics are still NEEDS-VERIFICATION. Do not invent mechanics for any integration (V3).
 
 Register note (how to read the approved phrasing below). The "Approved phrasing" and "User benefit" lines in every 9.x block state the MINIMUM verified claim and its register floor -- not a word ceiling. Writers reframe them in the v3 voice (section 3.1): lead with the capture source and a concrete moment. The verified CAPABILITY is fixed; the wording is not. Example transform (Asana search):
 - Register floor (as written below): "Littlebird can search tasks across your Asana workspace." + "find any task by keyword, assignee, or project without switching to Asana."
@@ -533,7 +571,7 @@ Do not claim: list_cycles (10 users -- below threshold), list_milestones (5 user
 For every integration below, writers may use approved phrasing of the form "Littlebird connects with [tool] for deeper context and actions" plus a plain user benefit. The specific mechanics (what Littlebird reads, writes, or automates) are NEEDS-VERIFICATION (eng or Viktor spec) and must not be invented or published. Do not build a dedicated page until the mechanics are documented and signed off.
 
 Project management: monday.com, Atlassian Rovo (Jira and Confluence), apple reminders
-Messaging - Imessage, whatsapp, messenger, 
+Messaging - Imessage, whatsapp, messenger, Slack (DOCS-VERIFIED status, 2026-07-27: native Slack integration is "coming soon" per the support site; a Slack MCP server is available today. Native-integration mechanics are NEEDS-VERIFICATION -- do not describe them as shipped; the MCP path may be described as available.)
 Design and collaboration: Canva, Miro, Lucid, 
 Developer tools: Axiom, Cloudflare Developer Platform, PlanetScale, Honeycomb
 CRM and sales: Intercom, Outreach, Close, Clarify, Day AI, Attio
@@ -542,7 +580,7 @@ Meetings: Calendly, Fireflies, Granola, Krisp, Circleback
 Marketing: Klaviyo, MailerLite, Bitly, Ahrefs, AirOps, Hubspot
 Analytics: Mixpanel, Omni Analytics, PostHog, Mixpanel
 Knowledge and docs: Guru, Mem, Craft, Egnyte, Google Drive
-Email and calendar: Outlook, Apple Calendar, Apple Reminders
+Email and calendar: Apple Calendar, Apple Reminders (Outlook has been promoted to a documented integration -- see 9.12). Apple Calendar and Apple Reminders appear as "common connections" on the support site (availability DOCS-VERIFIED, 2026-07-27) but their mechanics remain NEEDS-VERIFICATION.
 
 NEEDS-VERIFICATION (V3): GitLab and other user-requested integrations are not confirmed and must not be claimed as supported.
 
@@ -589,6 +627,32 @@ Approved phrasing (template): "Littlebird connects with TickTick for deeper cont
 
 Do not claim: any read, write, or automation capability not in the verified list above. Do not claim habit tracking, calendar view features, Pomo timer, or smart date parsing as Littlebird capabilities -- these are TickTick features not in the verified Littlebird integration set. Do not use "projects" for TickTick containers.
 
+9.12 Outlook
+DOCS-VERIFIED - mechanics documented on support.littlebird.ai/docs/outlook (2026-07-27). Not yet first-hand product-tested; treat as one tier below PRODUCT-VERIFIED. Backed by Microsoft Graph via delegated permissions only (see 9.13). One Outlook account can be connected. Works even when Outlook is not open.
+
+What Littlebird does with it: reads your Outlook calendar and mail, manages calendar events, and drafts/organizes email. It does NOT send Outlook email.
+
+How it works: connect Outlook in Settings > Integrations and sign in with your Microsoft account. The integration activates when Littlebird needs data beyond what is visible on screen.
+
+CALENDAR capabilities (read + write): view schedule and upcoming events; create, edit, and delete events; cancel events and notify attendees; find available meeting times; check coworker availability.
+
+EMAIL read capabilities: search by keyword, sender, or date across all folders or a specific folder; read full message content; view attachment info (file names, sizes, and types).
+
+EMAIL write / organize capabilities: draft new emails, replies, and forwards (they land in your Drafts folder); move messages between folders; mark messages read or unread; flag and categorize messages.
+
+Not supported (do not claim): sending email (drafts only -- sending stays on the user's side); downloading or adding attachments; inbox / mail-flow rules; deleting email.
+
+Platform note: on macOS, Outlook actions are also available through Hummingbird Quick Access (not on Windows).
+
+User benefit: your Microsoft calendar and inbox are usable from Chat even when Outlook is closed -- read the schedule, create and move events, search the inbox, and draft replies in context.
+
+Approved phrasing: "Connect Outlook and Littlebird works with your calendar and mail even when Outlook is closed -- read your schedule, create and edit events, search your inbox, and draft replies in context." Contrast note (DOCS-VERIFIED): unlike the Gmail + Google Calendar pairing, Outlook can move, flag, and categorize mail but cannot send; Gmail can send.
+
+Do not claim: any behavior not listed above, or any data handling that contradicts section 10.
+
+9.13 Microsoft 365 (admin setup)
+DOCS-VERIFIED - support.littlebird.ai/docs/microsoft-365 (2026-07-27). Outlook (9.12) connects through Microsoft Graph. For organizations, a Global Administrator can grant org-wide admin consent. Littlebird requests 16 delegated Graph permissions (calendar read/write incl. shared, contacts read incl. shared, mail read/read-shared/read-basic, Mail.Send, mailbox settings, offline_access, and basic profile/email/User.Read) and uses ZERO application permissions -- the app acts only on behalf of the signed-in user. The Microsoft Store listing was "in progress" as of the docs snapshot. Writer note: this is IT/setup detail, not consumer-marketing copy -- use only on docs-adjacent or enterprise pages. Product-confirm items (not Bible facts, routed separately): the admin-consent redirect uses the domain app.lilbird.co; and Mail.Send is requested at the Graph layer even though the Outlook surface exposes no send.
+
 
 10. Privacy and security (one canonical block)
 State these plainly and never spin. This is the trust lever.
@@ -599,17 +663,17 @@ State these plainly and never spin. This is the trust lever.
 
 10.3 Storage. Cloud, hosted on AWS (US East). The data Littlebird captures is encrypted and stored in the cloud.
 
-10.4 Standards (R1). SOC 2 certified (independently audited). GDPR, CCPA, and HIPAA: compliant data handling policies. A Cloud Security Alliance badge also appears on the site. Never write "HIPAA certified" or "GDPR certified." Only SOC 2 is "certified."
+10.4 Standards (R1). SOC 2 certified (independently audited). GDPR-aligned and CCPA-aligned data handling (DOCS-VERIFIED wording, 2026-07-27: the support site says "GDPR-aligned" / "CCPA-aligned," which supersedes the older "compliant" phrasing for pipeline copy). HIPAA is CONDITIONAL (DOCS-VERIFIED): Littlebird can support HIPAA only when the customer accepts a Business Associate Agreement (BAA) in-app (Settings > Data Controls) and enables HIPAA; a paid plan alone does not activate it, and protected health information must not be entered until the BAA is in effect. Do not state an unconditional "HIPAA compliant." A Cloud Security Alliance badge also appears on the site. Never write "HIPAA certified" or "GDPR certified." Only SOC 2 is "certified." (Live-site divergence flagged 2026-07-27: existing spoke Privacy sections still say "compliant" -- see the changelog copy-pass note.)
 
-10.5 Data use. Littlebird never sells your data and never trains models on your data. Data is used only in ways you explicitly approve.
+10.5 Data use. Littlebird never sells your data and never trains models on your data. Neither Littlebird nor its underlying LLM providers use your data to train models (DOCS-VERIFIED, 2026-07-27: the support Privacy, FAQ, and Slack pages all state this; this upgrades the former NEEDS-VERIFICATION item at 10.9 for the no-train OUTCOME -- the contractual-mechanism wording stays soft, see 10.9). Data is used only in ways you explicitly approve.
 
-10.6 User control. Pause context collection, exclude apps, delete data (all of it, or the last hour or day), and delete your account at any time. Observes only with your consent.
+10.6 User control. Pause context collection, exclude apps, delete data (all of it, or the last hour or day), and delete your account at any time. Observes only with your consent. Exclusion granularity (DOCS-VERIFIED, 2026-07-27): exclude specific apps, specific website domains, and whole content categories (Banking, Social Media, Shopping, Entertainment, Health; Adult content is always excluded by default). Automatic protections (DOCS-VERIFIED): password managers (1Password, Bitwarden, LastPass, and similar) are auto-detected and excluded by default; credit-card numbers and API keys are auto-redacted before storage; password fields are always ignored (see 4.4, 4.8).
 
 10.7 Independent audits. Infrastructure and controls are regularly audited and tested by third-party security firms. Trust Center at trust.littlebird.ai.
 
 10.8 Local processing stance. For individual and consumer users, Littlebird is cloud-based. The site says the team is working to bring more processing local and that, for those who require local-only systems, Littlebird may not be the right fit today. Self-hosted deployments are available at the Enterprise tier. Honest answer to "can I keep this local": not on individual plans yet; self-hosting is available at Enterprise.
 
-10.9 NEEDS-VERIFICATION (V1): the claim that Littlebird has enterprise agreements with LLM providers so they do not retain or train on user data is not yet confirmed. Do not publish until verified.
+10.9 Partially resolved (was NEEDS-VERIFICATION V1). The no-train OUTCOME is now DOCS-VERIFIED (2026-07-27): the support site states neither Littlebird nor its LLM providers train on your data (see 10.5) -- this is publishable. STILL NOT confirmed: the specific contractual mechanism ("enterprise agreements with LLM providers so they do not retain..."). Do not publish claims about the contractual retention terms until legal/eng confirm.
 
 Writer rule. Never hide the AWS and cloud fact. Acknowledge it, then point to the mitigations: encryption, SOC 2, deletion controls, no training, no selling, consent-based capture, Enterprise self-hosting.
 
@@ -618,10 +682,10 @@ Writer rule. Never hide the AWS and cloud fact. Acknowledge it, then point to th
 How does it understand my work? It pays attention to the active window (the doc, the site), listens during meetings, and can optionally connect email, calendar, and apps.
 Do I need to connect all my apps? No. It works automatically by paying attention to your screen. Integrations are optional, for deeper access. Example: connect Google Calendar to help schedule meetings.
 Why not just use ChatGPT? General assistants have no context. You copy and paste to catch them up, which is slow and raises privacy concerns. Littlebird already understands the work behind your request.
-Is my data secure? Yes. Encrypted at rest and in transit, SOC 2 certified, GDPR and CCPA compliant, delete anytime.
+Is my data secure? Yes. Encrypted at rest and in transit, SOC 2 certified, GDPR-aligned and CCPA-aligned data handling, delete anytime.
 Where is my data stored? Cloud, on AWS (US East), encrypted. The app runs on your computer and you control what it sees.
 Do you train models or sell data? No and no. Our customers are our users, not advertisers.
-What platforms? Mac and Windows (Windows beta), plus iOS and Android companion apps.
+What platforms? Mac and Windows, plus iOS and Android companion apps. (Windows "beta" qualifier dropped 2026-07-27, DOCS-VERIFIED.)
 Student discount? Yes. Plus is $15 per month for enrolled students, first two months free, .edu email.
 
 
@@ -722,17 +786,17 @@ States a price not in section 5, or states Pro as a flat price rather than "from
 Hides or spins the AWS and cloud-storage fact, or rigs the privacy story.
 Claims Littlebird stores or processes data locally, on-device, or offline, or that data "never leaves your machine." (The app runs locally; the memory is stored in the AWS cloud. R2.)
 Claims privacy superiority over a genuinely local competitor (Screenpipe, OpenClaw, Talat).
-Uses any NOT-YET-APPROVED capture claim (section 4.4): "never takes screenshots," "not pixels," "not a screen recorder," "never sees passwords," "never sees incognito." PENDING ENG SIGN-OFF.
+Uses a STILL-GATED capture claim (section 4.4): "not pixels," "never sees incognito or private windows," or "if you can't see it, Littlebird can't either." These remain unconfirmed. (The docs-verified phrasings -- "not a screen recorder," "no video or screenshots," "not a keylogger," "designed to ignore password fields," password-manager auto-exclusion, credit-card/API-key auto-redaction -- are now APPROVED per 4.4; use those, and never the absolute "never sees your passwords.")
 Writes "HIPAA certified" or "GDPR certified." Only SOC 2 is certified; the rest are compliant data handling.
 Uses "reads your mind" or "digital twin," or any AVOID metaphor (section 7.7).
 Presents an internal Littlebird survey stat as an independent or third-party finding, or publishes any number without its source (section 13).
 Publishes a third-party stat still marked NEEDS-VERIFICATION (V2) without confirming URL, wording, and year.
 Uses a customer quote that is not marked approved, or edits an approved quote, or invents attribution (section 14).
-Describes how any integration works beyond Gmail, Google Calendar, and Notion, or claims an unconfirmed integration such as GitLab (section 9).
+Describes how an integration works beyond what its section 9 block documents (the documented-mechanics set is Gmail, Google Calendar, Notion, Outlook, Todoist, TickTick, and the Tier-2 telemetry integrations 9.5-9.9); invents mechanics for a NEEDS-VERIFICATION integration; claims an unconfirmed integration such as GitLab; or describes the native Slack integration as shipped (it is "coming soon"; only the Slack MCP path is live). (Section 9.)
 Publishes a page for the three Phase 1 integrations before eng sign-off, or builds a page for any NEEDS-VERIFICATION integration.
 Names a competitor product without a date and source on any factual claim about it, or aggressively attacks ChatGPT, Claude, or Microsoft Copilot.
 Publishes a comparison page whose header or table title names the wrong competitor (R9).
-Names a fifth feature, or treats Daily Journal, Meeting Prep, or Quick Access as a confirmed feature (section 6).
+Promotes a supporting surface (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation) or an example use (Daily Journal) to a fifth marketing pillar, or headlines a spoke/hero as if one were a fifth feature (section 6, D3). (Meeting Prep and Quick Access are RESOLVED per 6.5 -- Meeting Prep is a Meeting Notes capability, Quick Access is Hummingbird's invocation; describe them as such, not as standalone pillars.)
 Claims accurate speaker attribution or interactive task management (current known limitations; NEEDS-VERIFICATION).
 Opens with a feature instead of a user pain (section 3).
 Sounds generic or templated, or could describe any AI tool. It must be specifically Littlebird, traceable to a section here.
@@ -741,8 +805,8 @@ Sounds generic or templated, or could describe any AI tool. It must be specifica
 Appendix A. Open items register
 TODOs (founder, eng, or product confirmation needed):
 
-D2 / 4.4: eng sign-off on capture-mechanism absolute claims (screenshots, pixels, passwords, incognito).
-6.5: product confirmation on Meeting Prep and Quick Access.
+D2 / 4.4: PARTIALLY RESOLVED 2026-07-27 (DOCS-VERIFIED). Approved: not-a-screen-recorder, no video/screenshots, not-a-keylogger, ignores-password-fields, password-manager auto-exclusion, card/API-key redaction. Still gated (unconfirmed on docs): "not pixels," incognito/private-window exclusion, "if you can't see it, Littlebird can't either."
+6.5: RESOLVED 2026-07-27 (DOCS-VERIFIED). Meeting Prep = a Meeting Notes capability (button on event cards); Quick Access = Hummingbird's invocation (same surface). See 6.5.
 9.1 Gmail: CLOSED - product-verified by Nikhil, 2026-06-27. No remaining gate.
 9.2 Google Calendar: CLOSED - product-verified by Nikhil, 2026-06-27. No remaining gate.
 9.3 Notion: CLOSED - product-verified by Nikhil, 2026-06-25. No remaining gate.
@@ -755,10 +819,14 @@ R7 / 12.7: confirm Fathom and Fireflies November 2025 deprioritization is supers
 
 NEEDS-VERIFICATION (external facts):
 
-V1 / 10.9: LLM-provider data agreements.
+V1 / 10.9: PARTIALLY RESOLVED 2026-07-27 (DOCS-VERIFIED). No-train outcome (Littlebird + providers) is confirmed and publishable; the contractual retention-agreement mechanism remains unconfirmed. See 10.5, 10.9.
 V2 / 13.2: third-party stat URLs, wording, and years.
 V3 / 9.4: GitLab and other unconfirmed integrations.
-6.2 / 15.18: current state of speaker diarization and action-item interactivity.
+6.2 / 15.18: current state of speaker diarization and action-item interactivity. (Docs 2026-07-27 do NOT resolve speaker attribution -- still do-not-claim.)
+B4 / 5.1: a "Power" tier appears on the docs MCP page but not in section 5. Do NOT publish "Power" as a tier; confirm the tier map with Viktor.
+B3 / 6.2, 5: languages divergence -- docs say Meeting Notes supports "25+ languages," pricing page says "10+." Kept at 10+; reconcile before publishing 25+.
+9.10 / 9.12: Apple Calendar and Apple Reminders availability is DOCS-VERIFIED but mechanics are NEEDS-VERIFICATION; native Slack integration mechanics are NEEDS-VERIFICATION (only the Slack MCP path is live).
+Live-site copy pass (B5, 2026-07-27): spoke Privacy sections say "compliant"; Bible 10.4 now uses "aligned" (GDPR/CCPA) and HIPAA-conditional-on-BAA. Existing pages diverge and need a copy pass.
 
 Production bugs to fix on the live site (report, not a bible fact):
 
