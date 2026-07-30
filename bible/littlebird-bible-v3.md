@@ -1,11 +1,18 @@
-The Littlebird Bible (v3.1)
+The Littlebird Bible (v3.2)
 Single source of truth for the SEO and AEO content pipeline. Writer subagents draft pages from this. The editor subagent enforces voice and rejects hallucinations using this. A human approves from a queue. Treat every fact here as the only authoritative version. If a claim is not in this bible, it cannot go on a page.
 
-Status: v3.1, updated July 27, 2026 (docs-site reconciliation) from v3 (built June 23, 2026, from Bible v2 plus the ingested source library: Content Style Guide, Brand Guidelines, Positioning and Messaging, Marketing Personas, Day-in-the-life Use Cases, Stats and Metrics, Launch Tiers, Competitive Tracker, the six live comparison pages, Customer Quotes, Discord). Founder and Viktor confirmations noted inline. Open items are marked TODO or NEEDS-VERIFICATION.
+Status: v3.2, updated July 30, 2026 (Power tier confirmed on the live pricing page) from v3.1 (July 27, 2026, docs-site reconciliation) from v3 (built June 23, 2026, from Bible v2 plus the ingested source library: Content Style Guide, Brand Guidelines, Positioning and Messaging, Marketing Personas, Day-in-the-life Use Cases, Stats and Metrics, Launch Tiers, Competitive Tracker, the six live comparison pages, Customer Quotes, Discord). Founder and Viktor confirmations noted inline. Open items are marked TODO or NEEDS-VERIFICATION.
 
 Provenance tiers. PRODUCT-VERIFIED (first-hand app-tested by product) > DOCS-VERIFIED (confirmed on Littlebird's official support documentation, support.littlebird.ai/docs, blessed by Shahzad -- a second-party published source, stronger than telemetry, not first-hand product-tested) > TELEMETRY-VERIFIED (usage telemetry, Tier 2) > NEEDS-VERIFICATION (do not publish). A DOCS-VERIFIED fact is publishable unless a Hard Don't (section 15) says otherwise.
 
 CHANGELOG
+v3.2 -- 2026-07-30 -- Power tier confirmed. Source: live littlebird.ai/pricing fetch, 2026-07-30 (the canonical source for section 5). Caught by Carson.
+- B4 RESOLVED: the "Power" tier that appeared only on the docs MCP page in v3.1 is confirmed on the live pricing page. Added the Power block to section 5 between Plus and Pro ($42 per month with an annual subscription, $510 up front; $50 billed monthly; everything in Plus plus 2.5x the usage credits of Plus, access to MCP, access to premium image generation, priority support). Updated the Pro block to the pricing page's current wording (from $100 per month; everything in Power plus 5x or 12x the usage credits of Plus, auto-detect language in meeting notes, early access to new features).
+- DELETED the now-false writer rule "There is no mid-tier between Plus and Pro." Replaced with the real tier ladder (Basic, Plus, Power, Pro, Team, Enterprise, plus Student) and a Power figures rule. Updated the matching section 15 Hard Don't, which carried the same false claim.
+- MCP availability (5.1, 6.6) is now stated as a Power-and-above capability; removed the "do not name the tier" caution. Team/Enterprise MCP position remains unstated (the pricing page does not say).
+- NEW flag (Appendix A, B6): the pricing page's download CTA still labels Windows "BETA" while the docs site and 4.5 dropped the qualifier -- surfaces diverge, confirm with the team.
+- Live-copy-pass list extended: the pricing page's own FAQ says "GDPR and CCPA compliant" (same B5 divergence as the spoke pages).
+
 v3.1 -- 2026-07-27 -- docs-site reconciliation. Source: support.littlebird.ai/docs (44 pages snapshotted to reference/docs-site-snapshot/, fetched 2026-07-27; diff report at output/docs-bible-diff-2026-07-27.md). Items below are DOCS-VERIFIED (support.littlebird.ai, 2026-07-27) unless noted.
 - B1 (four features): kept the four canonical marketing pillars; added section 6.6 SUPPORTING SURFACES (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation); reworded the section 6 header and the section 15 "fifth feature" Hard Don't accordingly.
 - B2 (capture mechanism, 4.4/15): adopted the docs-backed phrasings (not a screen recorder, no video or screenshots, not a keylogger, ignores password fields, password-manager auto-exclusion, credit-card/API-key auto-redaction). KEPT GATED as before: "not pixels," "never sees incognito or private windows," "if you can't see it, Littlebird can't either."
@@ -44,8 +51,8 @@ June 23, 2026
 littlebird.ai home, FAQ, privacy; Positioning and Messaging; Bible v2
 June 17, 2026 (site)
 5 Pricing
-littlebird.ai/pricing; Viktor
-June 17, 2026
+littlebird.ai/pricing (canonical); Viktor
+July 30, 2026 (pricing page)
 6 Features
 littlebird.ai feature pages; Positioning and Messaging; Day-in-the-life; Launch Tiers
 June 23, 2026
@@ -168,18 +175,19 @@ Tip: enabling Google Docs screen-reader support (Cmd+Option+Z) improves what Lit
 
 
 5. Pricing (one canonical block, R3)
-All figures confirmed against littlebird.ai/pricing and Viktor on June 17, 2026. Safe to publish exactly as written. Never publish a price not in this block.
+All figures confirmed against littlebird.ai/pricing and Viktor on June 17, 2026; re-confirmed against a live littlebird.ai/pricing fetch on July 30, 2026 (which added the Power tier, below). The live pricing page is the canonical source for this section. Safe to publish exactly as written. Never publish a price not in this block.
 
 Basic: $0. Full context from day one. Limited daily chats, limited active routines, limited meeting notes, meeting notes in 10+ languages, web search, mobile chat, connect calendar and email, cross-app search, community support.
 Plus: $17 per month billed annually ($204 per year up front), or $20 per month billed monthly. 14-day free trial. Adds advanced intelligence in chat, enhanced memory and personalization, more daily chats and routines, unlimited meeting notes, image generation, max intelligence for complex tasks and deep research, priority support.
-Pro: from $100 per month. Choose 5x or 12x more usage than Plus. Auto-detect language in meeting notes, premium image generation, higher max-intelligence limits, early access to new features.
+Power: $42 per month with an annual subscription ($510 up front), or $50 per month billed monthly. Everything in Plus, plus 2.5x the usage credits of Plus, access to MCP, access to premium image generation, priority support.
+Pro: from $100 per month. Everything in Power, plus 5x or 12x the usage credits of Plus, auto-detect language in meeting notes, early access to new features.
 Team: from $17 per month per seat. Team seat management plus Plus-level capabilities.
 Enterprise: custom pricing. SSO and centralized user management, self-hosted deployments, custom security and data controls, dedicated account manager, custom contract and invoicing.
 Student: $15 per month for actively enrolled students. First two months free. Apply with a .edu email.
 
-Writer rules. Pro is always "from $100 per month," never a flat $100. For Plus, show both the annual ($17) and monthly ($20) figures, or use the annual rate with the "billed annually" qualifier. There is no mid-tier between Plus and Pro; do not imply one exists even though users have requested it.
+Writer rules. Pro is always "from $100 per month," never a flat $100. For Plus, show both the annual ($17) and monthly ($20) figures, or use the annual rate with the "billed annually" qualifier. For Power, do the same: show both the annual ($42) and monthly ($50) figures, or the annual rate with the "with an annual subscription" qualifier; the $510 up-front figure is the pricing page's own, use it verbatim and do not recompute it. The tier ladder is Basic, Plus, Power, Pro, Team, Enterprise (plus Student, a separate eligibility-gated plan). Power is the mid-tier between Plus and Pro, confirmed on the pricing page 2026-07-30 -- name it accurately and do not invent, rename, or reorder tiers.
 
-5.1 Billing, usage, and account mechanics (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27). Billing runs through the Stripe billing portal (Settings > Subscription > Manage Subscription): update payment method, billing address, cardholder name, and VAT/Tax ID; cancel (access continues to the end of the current period) and reactivate anytime. The invoice-recipient email is set separately in Settings > General. Usage: each plan includes a monthly usage pool shown as a single usage bar (Settings > Usage) with a reset date; usage packs can be purchased anytime, never expire, and do not require upgrading to a higher tier. Account email can be changed in Settings > General (one-time-password flow). Open product question (B4): the docs MCP page references a "Power" tier that is not in the section 5 block above -- do NOT publish "Power" as a tier until Viktor confirms the tier map (see Appendix A).
+5.1 Billing, usage, and account mechanics (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27). Billing runs through the Stripe billing portal (Settings > Subscription > Manage Subscription): update payment method, billing address, cardholder name, and VAT/Tax ID; cancel (access continues to the end of the current period) and reactivate anytime. The invoice-recipient email is set separately in Settings > General. Usage: each plan includes a monthly usage pool shown as a single usage bar (Settings > Usage) with a reset date; usage packs can be purchased anytime, never expire, and do not require upgrading to a higher tier. Account email can be changed in Settings > General (one-time-password flow). B4 RESOLVED 2026-07-30: the "Power" tier the docs MCP page referenced is confirmed on the live pricing page and is now in the section 5 block above. Power is publishable as a tier, and MCP access is a Power-and-above capability (Power includes access to MCP; Pro includes everything in Power). See 6.6 and Appendix A.
 
 
 6. Features (four canonical marketing pillars)
@@ -227,7 +235,7 @@ Quick Access: RESOLVED -- "Quick Access" is the name of Hummingbird's on-demand 
 - Projects: folders that group related chats and meetings, with a per-project Instructions field (standing guidance), per-project file uploads shared to every chat in the project, and a context-scope setting (a project can't see outside conversations by default; toggleable).
 - Assistant Notes and Custom Instructions: user-editable persistent memory. Custom Instructions (Settings > Chat) are standing rules only you can edit. Assistant Notes are editable from chat -- Littlebird can add, update, or remove them on request; they persist across inactivity.
 - Command Bar: a Cmd+K / Ctrl+K palette to jump between chats, meeting notes, and settings, with contextual actions (e.g. download a chat as markdown, copy a chat link) and Reset Local Database (a hard refresh from the cloud).
-- MCP server: connect an external AI client (Claude Code/Desktop, Cursor, ChatGPT, and others) to Littlebird tools via OAuth at mcp.littlebird.ai/mcp, scoped to your account permissions. (A Slack MCP server is also offered today; see 9.10.) Availability is plan-gated -- state it as "available on paid plans" and do NOT name the specific tier until the "Power" tier question is resolved (see 5.1 and Appendix A, B4).
+- MCP server: connect an external AI client (Claude Code/Desktop, Cursor, ChatGPT, and others) to Littlebird tools via OAuth at mcp.littlebird.ai/mcp, scoped to your account permissions. (A Slack MCP server is also offered today; see 9.10.) Availability is plan-gated: MCP access is a Power-and-above capability (Power includes access to MCP; Pro includes everything in Power), confirmed on the live pricing page 2026-07-30 (B4 RESOLVED; see 5.1 and section 5). You may name the tier. Do not claim MCP on Basic or Plus, and do not state where Team or Enterprise sit on MCP -- the pricing page does not say.
 - Image generation: create an image from a text prompt inside Chat (a Plus capability; also noted in 6.1).
 - Also available (no dedicated page treatment needed): an in-app Learn course / guided tour.
 
@@ -782,7 +790,7 @@ Reject a draft if it does any of the following.
 
 Uses any banned word (section 3) or any em or en dash, or non-ASCII punctuation.
 Claims Littlebird beats ChatGPT or Claude at general reasoning or writing.
-States a price not in section 5, or states Pro as a flat price rather than "from $100 per month," or implies a mid-tier between Plus and Pro.
+States a price not in section 5, or states Pro as a flat price rather than "from $100 per month," or invents, renames, or reorders tiers away from the section 5 ladder (Basic, Plus, Power, Pro, Team, Enterprise, plus Student).
 Hides or spins the AWS and cloud-storage fact, or rigs the privacy story.
 Claims Littlebird stores or processes data locally, on-device, or offline, or that data "never leaves your machine." (The app runs locally; the memory is stored in the AWS cloud. R2.)
 Claims privacy superiority over a genuinely local competitor (Screenpipe, OpenClaw, Talat).
@@ -823,10 +831,11 @@ V1 / 10.9: PARTIALLY RESOLVED 2026-07-27 (DOCS-VERIFIED). No-train outcome (Litt
 V2 / 13.2: third-party stat URLs, wording, and years.
 V3 / 9.4: GitLab and other unconfirmed integrations.
 6.2 / 15.18: current state of speaker diarization and action-item interactivity. (Docs 2026-07-27 do NOT resolve speaker attribution -- still do-not-claim.)
-B4 / 5.1: a "Power" tier appears on the docs MCP page but not in section 5. Do NOT publish "Power" as a tier; confirm the tier map with Viktor.
+B4 / 5.1: RESOLVED 2026-07-30 (pricing-page confirmed, live littlebird.ai/pricing fetch). Power is a real tier between Plus and Pro and is now in the section 5 block; MCP access is stated as a Power-and-above capability (5.1, 6.6). No remaining gate.
+B6 / 4.5, 11 (NEW 2026-07-30): Windows "beta" -- surfaces diverge. The live pricing page's download CTA still labels Windows "BETA" (fetched 2026-07-30), while the support docs site and Bible 4.5 dropped the qualifier on 2026-07-27. Confirm the actual status with the team before anyone writes "beta" or argues about it. Until then 4.5 stands as written (no beta label); do not add "beta" to copy on the strength of the pricing-page CTA alone.
 B3 / 6.2, 5: languages divergence -- docs say Meeting Notes supports "25+ languages," pricing page says "10+." Kept at 10+; reconcile before publishing 25+.
 9.10 / 9.12: Apple Calendar and Apple Reminders availability is DOCS-VERIFIED but mechanics are NEEDS-VERIFICATION; native Slack integration mechanics are NEEDS-VERIFICATION (only the Slack MCP path is live).
-Live-site copy pass (B5, 2026-07-27): spoke Privacy sections say "compliant"; Bible 10.4 now uses "aligned" (GDPR/CCPA) and HIPAA-conditional-on-BAA. Existing pages diverge and need a copy pass.
+Live-site copy pass (B5, 2026-07-27; extended 2026-07-30): spoke Privacy sections say "compliant"; Bible 10.4 now uses "aligned" (GDPR/CCPA) and HIPAA-conditional-on-BAA. Existing pages diverge and need a copy pass. Added 2026-07-30: the live pricing page's own FAQ says "GDPR and CCPA compliant" -- the same B5 divergence, one more surface for the copy pass.
 
 Production bugs to fix on the live site (report, not a bible fact):
 
