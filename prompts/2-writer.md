@@ -14,6 +14,12 @@ RULES (non-negotiable):
 - Capabilities: write each as "Littlebird can [verb]..., so [the concrete moment it matters]." Reference the capture source where true ("from a meeting it transcribed," "an email on screen"). NEVER a flat list where every line is "Littlebird can X without opening Y" (the "Linear disease") -- vary the benefit, anchor each to a moment.
 - Approved phrasing shows the REGISTER and the verified capability, not a word ceiling. Reframe and compose verified capabilities in the v3 voice; you may go richer in wording, but NEVER invent a capability or inflate a claim beyond what the Bible verifies. Composed claims across two verified capabilities (e.g., Plaud read -> Notion page create) are allowed.
 - Punctuation: ASCII only. No em dashes, en dashes, or smart quotes. Use "--" as the em-dash stand-in and straight quotes (matches the shipped v3 copy).
+- RESPECTFUL COMPARISON (non-negotiable). Never denigrate a competitor, an integration partner, or a category of tool. Differentiation describes what LITTLEBIRD DOES, never what someone else does badly.
+  - BANNED as descriptions of any other product, integration, automation, or category: dumb, junk, stupid, spam(my), useless, clunky, bloated, garbage, primitive, crude, inferior, sloppy, half-baked, toy, gimmick, "a mess", "dumping ground", "dumb pipe", "just dumps", "glorified X".
+  - BANNED constructions: "Unlike [tool/category], Littlebird..." where the clause characterizes the other thing negatively; "[Tool]'s own [feature] never quite / doesn't / fails to..."; "not a generic bot"; "skip the [Competitor] dance". State Littlebird's behaviour on its own terms and stop.
+  - NEVER disparage the integration partner whose page you are writing. A Notion page does not say Notion's search is weak; it says Littlebird recalls by meaning. Same for every tool in Section 9.
+  - Named competitors (Section 12) get neutral, factual treatment only, with a date and source on any factual claim about them (Section 15). Bible-sanctioned framing is allowed as written -- e.g. Section 7.5's "a general AI is a brilliant stranger you must re-brief every time" and "only as powerful as the context you give them" -- because it describes a mechanism, not a defect.
+  - Prefer contrasting with the SITUATION rather than a product: "instead of starting from an empty prompt" beats "not a blank ChatGPT box"; "recall that works by meaning rather than exact keywords" beats "the recall [Tool]'s search never delivers".
 - Structure: follow the outline exactly. Keep it concrete, not bloated.
 
 SUB-SPOKE PAGE SHAPE (use when the outline is a sub-spoke, not a top-level spoke):
@@ -24,6 +30,6 @@ A sub-spoke anchors ONE capability of ONE tool and targets one plain search quer
 4. 2-3 related capabilities that link UP to the parent spoke page. Gesture and link; do not re-teach them.
 5. Mini-FAQ: exactly 2 questions.
 6. CTA.
-Every sub-spoke MUST link to its parent spoke page. Honor the anti-duplication note from the angle map: if a sentence would fit equally well on a sibling page, sharpen it toward this page's angle. Field-level spec and exemplars are in reference/subspoke-voice-spec.md -- but follow the v3 contraction register (Bible 3.1) over the older no-contractions exemplars there.
+Every sub-spoke MUST link to its parent spoke page. Honor the anti-duplication note from the angle map: if a sentence would fit equally well on a sibling page, sharpen it toward this page's angle. Field-level spec and exemplars are in output/subspoke-voice-spec.md -- but follow the v3 contraction register (Bible 3.1) over the older no-contractions exemplars there.
 
 OUTPUT: write output/<name>/draft.md. Full page copy.
