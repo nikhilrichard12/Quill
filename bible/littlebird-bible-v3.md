@@ -1,11 +1,12 @@
-The Littlebird Bible (v3.3)
+The Littlebird Bible (v3.4)
 Single source of truth for the SEO and AEO content pipeline. Writer subagents draft pages from this. The editor subagent enforces voice and rejects hallucinations using this. A human approves from a queue. Treat every fact here as the only authoritative version. If a claim is not in this bible, it cannot go on a page.
 
-Status: v3.3, updated August 30, 2026 (founder Reddit pass: public Reddit answers by Tushar folded in as FOUNDER-STATED facts, cited inline with dates; assembled by Magpie, Carson's scraper, and delivered for review in this PR -- see the changelog below) from v3.2, updated July 30, 2026 (Power tier confirmed on the live pricing page) from v3.1 (July 27, 2026, docs-site reconciliation) from v3 (built June 23, 2026, from Bible v2 plus the ingested source library: Content Style Guide, Brand Guidelines, Positioning and Messaging, Marketing Personas, Day-in-the-life Use Cases, Stats and Metrics, Launch Tiers, Competitive Tracker, the six live comparison pages, Customer Quotes, Discord). Founder and Viktor confirmations noted inline. Open items are marked TODO or NEEDS-VERIFICATION.
+Status: v3.4, updated September 22, 2026 (Hover rename, see changelog) from v3.3, updated August 30, 2026 (founder Reddit pass: public Reddit answers by Tushar folded in as FOUNDER-STATED facts, cited inline with dates; assembled by Magpie, Carson's scraper, and delivered for review in this PR -- see the changelog below) from v3.2, updated July 30, 2026 (Power tier confirmed on the live pricing page) from v3.1 (July 27, 2026, docs-site reconciliation) from v3 (built June 23, 2026, from Bible v2 plus the ingested source library: Content Style Guide, Brand Guidelines, Positioning and Messaging, Marketing Personas, Day-in-the-life Use Cases, Stats and Metrics, Launch Tiers, Competitive Tracker, the six live comparison pages, Customer Quotes, Discord). Founder and Viktor confirmations noted inline. Open items are marked TODO or NEEDS-VERIFICATION.
 
 Provenance tiers. PRODUCT-VERIFIED (first-hand app-tested by product) > DOCS-VERIFIED (confirmed on Littlebird's official support documentation, support.littlebird.ai/docs, blessed by Shahzad -- a second-party published source, stronger than telemetry, not first-hand product-tested) > FOUNDER-STATED (defined below) > TELEMETRY-VERIFIED (usage telemetry, Tier 2) > NEEDS-VERIFICATION (do not publish). A DOCS-VERIFIED fact is publishable unless a Hard Don't (section 15) says otherwise. FOUNDER-STATED (added v3.3): a founder's dated public statement -- a Reddit or Discord answer, an AMA reply -- cited with a permalink and a date. It ranks between DOCS-VERIFIED and TELEMETRY-VERIFIED. A FOUNDER-STATED fact belongs in this bible and is quotable in page copy with attribution. THE EXCEPTION IS CONTRACTUAL OR LEGAL claims: those still require founder or legal confirmation before they appear in page copy, however plainly a founder stated them in public. Separately, where a founder's wording is hedged ("should") or is a one-off description of a mechanic, product-confirm before building page copy on it.
 
 CHANGELOG
+v3.4 -- 2026-09-22 -- Hover rename. Source: Shahzad (PRODUCT-VERIFIED); littlebird.ai site nav shows "Hover" as of 2026-09-15. The fourth marketing pillar formerly named Hummingbird is now Hover. Hummingbird is the legacy name: still used on support.littlebird.ai/docs and in older copy; do not use it in new copy except as "formerly Hummingbird" where a reader may know the old name. Updated 3 (feature-name casing), 6 (pillars), 6.4, 6.5 (Quick Access), 9.12 platform note, 12 (Cluely framing), 15 Hard Don'ts, Appendix notes.
 v3.3 -- 2026-08-30 -- founder Reddit pass (Magpie). Source: public Reddit answers by u/YardLeast3268 (Tushar), June-August 2026, each cited inline with date; permalinks in the PR description (u/Weak-Ad-3583, Alex's listed handle, had no findable activity). Headlines: ZDR agreements with LLM providers publicly stated by Tushar (moves 10.9); meeting audio is never stored, only transcript + summary (6.2, 10.3); transcription is opt-in per meeting by default (6.2); Artifacts / file creation is live, server-side with download (6.6); diarization founder-confirmed in development, still do-not-claim (6.2); integration passthrough boundary added (10.10); third-party MCP servers connectable into Littlebird, hedged (6.6); founder tip on Custom Instructions for underused integrations (6.6); founder-stated roadmap items logged in Appendix A (not publishable as shipped).
 v3.2 -- 2026-07-30 -- Power tier confirmed. Source: live littlebird.ai/pricing fetch, 2026-07-30 (the canonical source for section 5). Caught by Carson.
 - B4 RESOLVED: the "Power" tier that appeared only on the docs MCP page in v3.1 is confirmed on the live pricing page. Added the Power block to section 5 between Plus and Pro ($42 per month with an annual subscription, $510 up front; $50 billed monthly; everything in Plus plus 2.5x the usage credits of Plus, access to MCP, access to premium image generation, priority support). Updated the Pro block to the pricing page's current wording (from $100 per month; everything in Power plus 5x or 12x the usage credits of Plus, auto-detect language in meeting notes, early access to new features).
@@ -21,7 +22,7 @@ v3.1 -- 2026-07-27 -- docs-site reconciliation. Source: support.littlebird.ai/do
 - B4 ("Power" tier): a "Power" tier appears on the docs MCP page but not in section 5. NOT added anywhere; logged as an open product question (5.1, Appendix A). Do not publish "Power" as a tier.
 - B5 (privacy wording): adopted "GDPR-aligned / CCPA-aligned" and HIPAA-conditional-on-BAA (10.4); confirmed no-train covers LLM providers (10.5, upgrading 10.9). NOTE: live-site spoke Privacy sections still say "compliant" and now diverge from the Bible -- a copy pass is needed.
 - B6 (Windows): dropped the "(beta)" qualifier from Windows (4.5, 11).
-- Bucket C upgrades: Meeting Prep resolved as a Meeting Notes capability and Quick Access resolved as Hummingbird's invocation (6.5); no-train-incl-providers (10.5/10.9); most 4.4 capture claims (above); Outlook mechanics promoted to a documented integration (new 9.12, DOCS-VERIFIED) plus Microsoft 365 admin setup (9.13); Outlook added to the Phase-1 allow-list (section 9) and the section 1 / section 15 gates.
+- Bucket C upgrades: Meeting Prep resolved as a Meeting Notes capability and Quick Access resolved as Hummingbird's (now Hover's) invocation (6.5); no-train-incl-providers (10.5/10.9); most 4.4 capture claims (above); Outlook mechanics promoted to a documented integration (new 9.12, DOCS-VERIFIED) plus Microsoft 365 admin setup (9.13); Outlook added to the Phase-1 allow-list (section 9) and the section 1 / section 15 gates.
 - Bucket A additions folded in: context-awareness mechanics + exclusions/auto-privacy (4.4, 4.8, 10.6); platforms/mobile clarification (4.5); billing/usage/account mechanics (5.1); Chat mechanics + Chat Library + image generation (6.1); Meeting Notes structure + Meeting Prep + auto-start + import + iOS transcription (6.2); Routines templates + notifications + web-sourced + auto-pause (6.3); supporting surfaces (6.6); Slack status (9.10); Outlook + Microsoft 365 (9.12, 9.13).
 
 
@@ -137,7 +138,7 @@ Banned words. revolutionary, game-changing, game-changer, cutting-edge, disrupti
 Naming and capitalization (from the Content Style Guide).
 
 "Littlebird." One word. Lowercase b. Never "Little Bird" or "LittleBird."
-Capitalize feature names as proper nouns: Chat, Meeting Notes, Routines, Hummingbird. Lowercase when used as a benefit or countable, for example "unlimited meeting notes."
+Capitalize feature names as proper nouns: Chat, Meeting Notes, Routines, Hover. Lowercase when used as a benefit or countable, for example "unlimited meeting notes."
 "Chat" the feature is capitalized; "chat with Littlebird" the verb is lowercase.
 Sentence case for all headlines and subheadings.
 Spell out acronyms on first use.
@@ -192,7 +193,7 @@ Writer rules. Pro is always "from $100 per month," never a flat $100. For Plus, 
 
 
 6. Features (four canonical marketing pillars)
-Four canonical marketing pillars: Chat, Meeting Notes, Routines, Hummingbird. Do not promote a supporting surface to a fifth pillar (D3). Littlebird also ships additional product surfaces (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation) -- these are real and DOCS-VERIFIED, documented in section 6.6 as SUPPORTING SURFACES, not marketing pillars. Reference them factually where useful; never headline a spoke or hero as if one were a fifth pillar.
+Four canonical marketing pillars: Chat, Meeting Notes, Routines, Hover (formerly Hummingbird; renamed 2026-09, see changelog v3.4). Do not promote a supporting surface to a fifth pillar (D3). Littlebird also ships additional product surfaces (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation) -- these are real and DOCS-VERIFIED, documented in section 6.6 as SUPPORTING SURFACES, not marketing pillars. Reference them factually where useful; never headline a spoke or hero as if one were a fifth pillar.
 
 6.1 Chat.
 
@@ -221,8 +222,9 @@ Example use case: Littlebird can function as a daily journal through a Routine. 
 Approved one-liner: "Proactive insights, on your schedule."
 Routines mechanics (DOCS-VERIFIED, 2026-07-27): a Routine is a saved prompt that runs on a schedule (daily, weekly, or monthly at a chosen time) and pushes the result back to you. Ready-made Daily/Weekly/Monthly templates exist. Routines can draw from your own work or from the web (e.g. a custom news feed). Auto-pause is on by default (a Routine pauses if you stop opening its output; resume anytime from the Routines dashboard). Configure push and email notifications when an output is ready. You can ask about Routines in Chat ("what did my morning briefing say today").
 
-6.4 Hummingbird.
+6.4 Hover (formerly Hummingbird).
 
+Name: "Hover" is the current product and marketing name (site nav, 2026-09-15). "Hummingbird" is the legacy name and still appears on support.littlebird.ai/docs; treat docs mentions of Hummingbird as Hover.
 What it is: Littlebird wherever you are working.
 What it does: open Littlebird over whatever you are doing (double-tap Option), ask, and keep going without breaking flow.
 Platform note: currently Mac-only.
@@ -231,7 +233,7 @@ Approved one-liner: "Get answers without breaking your flow."
 6.5 Resolved candidate features (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27).
 
 Meeting Prep: RESOLVED -- a capability of Meeting Notes, not a separate feature. It surfaces as a "Meeting Prep" button on a future event's card and produces a pre-meeting briefing from your context. Write it as a Meeting Notes capability (see 6.2); do not promote it to a fifth pillar.
-Quick Access: RESOLVED -- "Quick Access" is the name of Hummingbird's on-demand invocation (double-tap Option), the same surface as Hummingbird, not a distinct feature (the docs call it "Hummingbird Quick Access"). Keep "Hummingbird" as the feature name; "Quick Access" may be used to describe the invocation.
+Quick Access: RESOLVED -- "Quick Access" is the name of Hover's on-demand invocation (double-tap Option), the same surface as Hover, not a distinct feature (the docs still call it "Hummingbird Quick Access"). Keep "Hover" as the feature name; "Quick Access" may be used to describe the invocation.
 
 6.6 Supporting surfaces (DOCS-VERIFIED, support.littlebird.ai, 2026-07-27). Real product surfaces, NOT marketing pillars (D3). Reference them factually; never headline a spoke or hero as if one were a fifth feature.
 - Glance: a collapsible panel on the home (new-chat) page (Cmd+G / Ctrl+G) that surfaces your day before you type -- widgets for Schedule, Routines, Yesterday's meetings, Continue (your last chat), and Connect more. Reorderable; remembered across sessions.
@@ -654,7 +656,7 @@ EMAIL write / organize capabilities: draft new emails, replies, and forwards (th
 
 Not supported (do not claim): sending email (drafts only -- sending stays on the user's side); downloading or adding attachments; inbox / mail-flow rules; deleting email.
 
-Platform note: on macOS, Outlook actions are also available through Hummingbird Quick Access (not on Windows).
+Platform note: on macOS, Outlook actions are also available through Hover Quick Access (docs: "Hummingbird Quick Access") (not on Windows).
 
 User benefit: your Microsoft calendar and inbox are usable from Chat even when Outlook is closed -- read the schedule, create and move events, search the inbox, and draft replies in context.
 
@@ -726,7 +728,7 @@ Context: Granola raised $125M Series C at a $1.5B valuation (March 2026); positi
 
 12.4 Cluely.
 
-Approved framing: Cluely is a real-time, in-meeting assistant. Littlebird helps during meetings (Hummingbird while transcribing) and everywhere else, with context from your whole workday, not just the call.
+Approved framing: Cluely is a real-time, in-meeting assistant. Littlebird helps during meetings (Hover while transcribing) and everywhere else, with context from your whole workday, not just the call.
 Use Cluely when: you want live coaching during sales calls or a tool built specifically for in-meeting performance.
 Context (date and source required): the CEO admitted in March 2026 that a previously claimed $7M ARR figure was fabricated; a mid-2025 security incident was reported. Use sparingly and factually, not as an attack.
 
@@ -810,7 +812,7 @@ Describes how an integration works beyond what its section 9 block documents (th
 Publishes a page for the three Phase 1 integrations before eng sign-off, or builds a page for any NEEDS-VERIFICATION integration.
 Names a competitor product without a date and source on any factual claim about it, or aggressively attacks ChatGPT, Claude, or Microsoft Copilot.
 Publishes a comparison page whose header or table title names the wrong competitor (R9).
-Promotes a supporting surface (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation) or an example use (Daily Journal) to a fifth marketing pillar, or headlines a spoke/hero as if one were a fifth feature (section 6, D3). (Meeting Prep and Quick Access are RESOLVED per 6.5 -- Meeting Prep is a Meeting Notes capability, Quick Access is Hummingbird's invocation; describe them as such, not as standalone pillars.)
+Promotes a supporting surface (Glance, Projects, Assistant Notes, Command Bar, MCP server, image generation) or an example use (Daily Journal) to a fifth marketing pillar, or headlines a spoke/hero as if one were a fifth feature (section 6, D3). (Meeting Prep and Quick Access are RESOLVED per 6.5 -- Meeting Prep is a Meeting Notes capability, Quick Access is Hover's invocation; describe them as such, not as standalone pillars.)
 Claims accurate speaker attribution or interactive task management (current known limitations; NEEDS-VERIFICATION).
 Opens with a feature instead of a user pain (section 3).
 Sounds generic or templated, or could describe any AI tool. It must be specifically Littlebird, traceable to a section here.
@@ -820,7 +822,7 @@ Appendix A. Open items register
 TODOs (founder, eng, or product confirmation needed):
 
 D2 / 4.4: PARTIALLY RESOLVED 2026-07-27 (DOCS-VERIFIED). Approved: not-a-screen-recorder, no video/screenshots, not-a-keylogger, ignores-password-fields, password-manager auto-exclusion, card/API-key redaction. Still gated (unconfirmed on docs): "not pixels," incognito/private-window exclusion, "if you can't see it, Littlebird can't either."
-6.5: RESOLVED 2026-07-27 (DOCS-VERIFIED). Meeting Prep = a Meeting Notes capability (button on event cards); Quick Access = Hummingbird's invocation (same surface). See 6.5.
+6.5: RESOLVED 2026-07-27 (DOCS-VERIFIED). Meeting Prep = a Meeting Notes capability (button on event cards); Quick Access = Hover's invocation (same surface; Hover was named Hummingbird until 2026-09). See 6.5.
 9.1 Gmail: CLOSED - product-verified by Nikhil, 2026-06-27. No remaining gate.
 9.2 Google Calendar: CLOSED - product-verified by Nikhil, 2026-06-27. No remaining gate.
 9.3 Notion: CLOSED - product-verified by Nikhil, 2026-06-25. No remaining gate.
